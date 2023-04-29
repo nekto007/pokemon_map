@@ -59,6 +59,7 @@ def show_pokemon(request, pokemon_id):
             'pokemon_id': pokemon.pk,
             'img_url': pokemon.photo.url,
             'title_ru': pokemon.title,
+            'description': pokemon.description
         }
     except Pokemon.DoesNotExist:
         return HttpResponseNotFound('<h1>Такой покемон не найден</h1>')
