@@ -1,43 +1,64 @@
-# Карта покемонов
+# Pokémon map
 
 ![screenshot](https://dvmn.org/filer/canonical/1563275070/172/)
 
-### Предметная область
+### Subject Area
 
-Сайт для помощи по игре [Pokemon GO](https://www.pokemongo.com/en-us/). Это игра про ловлю [покемонов](https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BA%D0%B5%D0%BC%D0%BE%D0%BD).
+A site to help with the game [Pokemon GO](https://www.pokemongo.com/en-us/). This is a game about catching [Pokemon](https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BA%D0%B5%D0%BC%D0%BE%D0%BD).
 
-Суть игры в том, что на карте периодически появляются покемоны, на определённый промежуток времени. Каждый игрок может поймать себе покемона, и пополнить свою личную коллекцию.
+The essence of the game is that pokemons periodically appear on the map, for a certain period of time. Each player can catch a pokemon, and add to his personal collection.
 
-На карте может быть сразу несколько особей одного и того же покемона: например, 3 Бульбазавра. Каждую особь могут поймать сразу несколько игроков. Если игрок поймал себе особь покемона, она исчезает для него, но остаётся для других.
+There can be several individuals of the same pokémon on the map at once: for example, 3 Bulbasaurus. Each individual can be caught by several players at once. If a player catches a pokémon specimen, it disappears for him, but remains for others.
 
-В игре есть механика эволюции. Покемон одного вида может "эволюционировать" в другого. Так, например, Бульбазавр превращается в Ивизавра, а тот превращается в Венузавра.
+The game has an evolution mechanic. Pokémon of one species can "evolve" into another. For example, Bulbasaurus evolves into Ivesaurus, which evolves into Venusaurus.
 
 ![bulba evolution](https://dvmn.org/filer/canonical/1562265973/167/)
 
-### Как запустить
+Translated with www.DeepL.com/Translator (free version)
 
-Для запуска сайта вам понадобится Python третьей версии.
+## Setup
 
-Скачайте код с GitHub. Затем установите зависимости
+1. Clone project
+```bash
+git clone https://github.com/nekto007/pokemon_map.git
+cd pokemon_map
+```
+2. Create virtual environment
 
-```sh
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+3. Install requirements
+
+```bash
 pip install -r requirements.txt
 ```
 
-Запустите разработческий сервер
+4. Create database
 
-```sh
-python3 manage.py runserver
+```bash
+python manage.py migrate
 ```
 
-### Переменные окружения
+5. Create Django superuser
 
-Часть настроек проекта берётся из переменных окружения. Чтобы их определить, создайте файл `.env` рядом с `manage.py` и запишите туда данные в таком формате: `ПЕРЕМЕННАЯ=значение`.
+```bash
+python manage.py createsuperuser
+```
 
-Доступны 2 переменные:
-- `DEBUG` — дебаг-режим. Поставьте True, чтобы увидеть отладочную информацию в случае ошибки.
-- `SECRET_KEY` — секретный ключ проекта
+6. Run local server
 
-## Цели проекта
+```bash
+python manage.py runserver
+```
 
-Код написан в учебных целях — это урок в курсе по Python и веб-разработке на сайте [Devman](https://dvmn.org).
+## Work
+
+1. Open `Pokemon map` at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+2. Open `admin` panel if needed at [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+
+## Project Objectives
+
+The code is written for educational purposes - it is a lesson in a course on Python and web development at [Devman](https://dvmn.org).
